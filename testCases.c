@@ -64,6 +64,23 @@
         int expected = 0;
         CuAssertIntEquals(tc, expected, actual);
     } 
+
+    void TestQ2_boundary_9999(CuTest *tc) {
+
+    	int input = 9999;
+            int actual = Q2(input);
+            int expected = 0;
+            CuAssertIntEquals(tc, expected, actual);
+        }
+
+        void TestQ2_boundary_neg9999(CuTest *tc) {
+
+    	int input = -9999;
+            int actual = Q2(input);
+            int expected = 0;
+            CuAssertIntEquals(tc, expected, actual);
+        }
+
 //===========================================================
 //=================Question 3================================  
 /*
@@ -125,6 +142,30 @@ If the average is not in the range 0-100, the program should return -1 for inval
         int expected = -1;
         CuAssertIntEquals(tc, expected, actual);
     } 
+
+    void TestQ3_invalid_neg101(CuTest *tc) {
+
+            float input = -101;
+            int actual = Q3(input);
+            int expected = -1;
+            CuAssertIntEquals(tc, expected, actual);
+        }
+
+        void TestQ3_boundary_0(CuTest *tc) {
+
+            float input = 0;
+            int actual = Q3(input);
+            int expected = 0;
+            CuAssertIntEquals(tc, expected, actual);
+        }
+
+        void TestQ3_boundary_100(CuTest *tc) {
+
+            float input = 100;
+            int actual = Q3(input);
+            int expected = 4;
+            CuAssertIntEquals(tc, expected, actual);
+        }
 //===========================================================
 //=================Question 4================================ 
     void TestQ4_1(CuTest *tc) {
@@ -156,6 +197,22 @@ If the average is not in the range 0-100, the program should return -1 for inval
         double expected = 3.141592;
         CuAssertDblEquals(tc, expected, actual,0.0000009);
     } 
+
+    void TestQ4_zero(CuTest *tc) {
+
+    				int input = 0;
+            double actual = Q4(input);
+            double expected = 0;
+            CuAssertDblEquals(tc, expected, actual,0);
+        }
+
+        void TestQ4_negone(CuTest *tc) {
+
+    				int input = -1;
+            double actual = Q4(input);
+            double expected = 0;
+            CuAssertDblEquals(tc, expected, actual,0);
+        }
 //===========================================================
 //=================Question 5================================ 
 
@@ -227,6 +284,7 @@ If the average is not in the range 0-100, the program should return -1 for inval
 
 
     }
+
     void TestQ6_neg(CuTest *tc) {
         int input = -1000;
         int expected[100]={0},actual[100]={0};
@@ -238,6 +296,29 @@ If the average is not in the range 0-100, the program should return -1 for inval
           	CuAssertIntEquals(tc, expected[i], actual[i]);
 
     }
+
+     void TestQ6_zero(CuTest *tc) {
+         int input = 0;
+         int expected[100]={0},actual[100]={0};
+         int expectedCount=0;
+         int actualCount = Q6(input,actual);
+         CuAssertIntEquals(tc, expectedCount, actualCount);
+ 	int i;
+          for (i=0;i<100;i++)
+           	CuAssertIntEquals(tc, expected[i], actual[i]);
+     }
+
+    void TestQ6_1(CuTest *tc) {
+         int input = 1;
+         int expected[100]={0},actual[100]={0};
+         int expectedCount=0;
+         int actualCount = Q6(input,actual);
+         CuAssertIntEquals(tc, expectedCount, actualCount);
+ 	int i;
+          for (i=0;i<100;i++)
+           	CuAssertIntEquals(tc, expected[i], actual[i]);
+     }
+
 //===========================================================
 //=================Question 7================================  
     void TestQ7a_1(CuTest *tc) {
@@ -265,6 +346,13 @@ If the average is not in the range 0-100, the program should return -1 for inval
         int expected = 987654321;
         CuAssertIntEquals(tc, expected, actual);
     }
+
+    void TestQ7b_boundary_zero(CuTest *tc) {
+           int input = 0;
+           int actual = Q7b(input);
+           int expected = 0;
+           CuAssertIntEquals(tc, expected, actual);
+       }
 
 
     CuSuite* Lab1GetSuite() {
