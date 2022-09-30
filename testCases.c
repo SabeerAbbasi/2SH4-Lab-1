@@ -73,7 +73,7 @@
             CuAssertIntEquals(tc, expected, actual);
         }
 
-        void TestQ2_boundary_neg9999(CuTest *tc) {
+    void TestQ2_boundary_neg9999(CuTest *tc) {
 
     	int input = -9999;
             int actual = Q2(input);
@@ -206,7 +206,7 @@ If the average is not in the range 0-100, the program should return -1 for inval
             CuAssertDblEquals(tc, expected, actual,0);
         }
 
-        void TestQ4_negone(CuTest *tc) {
+    void TestQ4_negone(CuTest *tc) {
 
     				int input = -1;
             double actual = Q4(input);
@@ -367,6 +367,8 @@ If the average is not in the range 0-100, the program should return -1 for inval
         SUITE_ADD_TEST(suite, TestQ2_true_neg);
         SUITE_ADD_TEST(suite, TestQ2_false_neg);
         SUITE_ADD_TEST(suite, TestQ2_zero);
+        SUITE_ADD_TEST(suite, TestQ2_boundary_9999);
+        SUITE_ADD_TEST(suite, TestQ2_boundary_neg9999);
         
 
         SUITE_ADD_TEST(suite, TestQ3_4);
@@ -376,12 +378,17 @@ If the average is not in the range 0-100, the program should return -1 for inval
         SUITE_ADD_TEST(suite, TestQ3_0);
         SUITE_ADD_TEST(suite, TestQ3_invalid_1);
         SUITE_ADD_TEST(suite, TestQ3_invalid_2);
+        SUITE_ADD_TEST(suite, TestQ3_invalid_neg101);
+        SUITE_ADD_TEST(suite, TestQ3_boundary_0);
+        SUITE_ADD_TEST(suite, TestQ3_boundary_100);
         
 
         SUITE_ADD_TEST(suite, TestQ4_1);
         SUITE_ADD_TEST(suite, TestQ4_2);
         SUITE_ADD_TEST(suite, TestQ4_20);
         SUITE_ADD_TEST(suite, TestQ4_M);
+        SUITE_ADD_TEST(suite, TestQ4_zero);
+        SUITE_ADD_TEST(suite, TestQ4_negone);
         
 
         SUITE_ADD_TEST(suite, TestQ5);
@@ -391,12 +398,15 @@ If the average is not in the range 0-100, the program should return -1 for inval
         SUITE_ADD_TEST(suite, TestQ6_1000);
         SUITE_ADD_TEST(suite, TestQ6_10000);
         SUITE_ADD_TEST(suite, TestQ6_neg);
+        SUITE_ADD_TEST(suite, TestQ6_zero);
+        SUITE_ADD_TEST(suite, TestQ6_1);
         
 
         SUITE_ADD_TEST(suite, TestQ7a_1);
         SUITE_ADD_TEST(suite, TestQ7a_2);
         SUITE_ADD_TEST(suite, TestQ7b_1);
         SUITE_ADD_TEST(suite, TestQ7b_2);
+        SUITE_ADD_TEST(suite, TestQ7b_boundary_zero);
         
 
 
