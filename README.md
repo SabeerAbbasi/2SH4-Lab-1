@@ -1,7 +1,3 @@
-# compeng2sh4-lab1-starter
+#COMPENG 2SH4 Lab 1 
 
-Section: L05
 
-MacID: abbass28
-
-StudentID: 400359910
